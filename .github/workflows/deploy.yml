@@ -2,11 +2,12 @@ name: Deploy to EC2
 on:
   push:
     branches: [ main ]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (no need to build locally)
+      - name: Checkout (not used for build; we deploy on the server)
         uses: actions/checkout@v4
 
       - name: SSH and deploy
@@ -16,8 +17,23 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            set -e
             cd ~/klapideas-site
             git fetch origin
             git reset --hard origin/main
             docker compose up -d --build --remove-orphans
+            # Write a health marker inside the running web container:
+            SHA=${GITHUB_SHA}
+            docker compose exec -T klap_site sh -c "printf 'sha=%s\ntime=%s\n' \"$SHA\" \"$(date -u +%FT%TZ)\" > /usr/share/nginx/html/_deploy.txt"
+            # Show running services (appears in the Actions log)
             docker compose ps
+
+      - name: Public HTTP checks
+        run: |
+          set -e
+          curl -fsSIL https://klapideas.com
+          curl -fsSIL https://klapideas.com/about.html
+          # Fetch the deployment marker and assert it matches this commit
+          DEPLOYED=$(curl -fsS https://klapideas.com/_deploy.txt | sed -n 's/^sha=//p')
+          echo "Server reports sha=$DEPLOYED"
+          test "$DEPLOYED" = "$GITHUB_SHA"
