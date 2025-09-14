@@ -1,34 +1,132 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Klap Ideas — Simple tech. Real outcomes.</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klap Ideas — Building tech that uplifts Africa</title>
+  <meta name="description" content="Klap Ideas is a Nigerian-born, globally-minded tech company. KilimaHUB is our flagship—one of many products to accelerate Africa’s development." />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <nav class="container">
-    <ul><li><strong>Klap Ideas</strong></li></ul>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-badge"></span>
+        <span>Klap Ideas</span>
+      </div>
+      <nav>
+        <a class="link" href="/index.html">Home</a>
+        <a class="link" href="/about.html">About</a>
+        <a class="link" href="/services.html">Services</a>
+        <a class="link" href="/careers.html">Careers</a>
+        <a class="link" href="/contact.html">Contact</a>
+        <a class="btn acc" href="/careers.html">We’re hiring</a>
+      </nav>
+    </div>
+  </header>
 
-  <main class="container">
-    <section>
-      <h1>Simple tech. Real outcomes.</h1>
-      <p>We are Klap Ideas Nigeria Ltd., building useful products — including <strong>KilimaHUB</strong> — with lean, elegant engineering.</p>
-      <a role="button" href="/services.html">See what we do</a>
+  <main>
+    <section class="container hero">
+      <div>
+        <h1>Technology for Africa—built to scale with the world</h1>
+        <p>
+          We design and launch practical, elegant products that unlock opportunity.
+          <strong>KilimaHUB</strong> is our flagship platform—just the start of a broader roadmap in
+          AI, fintech access, climate resilience, health, and digital education.
+        </p>
+        <div class="cta">
+          <a class="btn acc" href="/services.html#kilimahub">Explore KilimaHUB</a>
+          <a class="btn" href="/about.html">Learn about Klap Ideas</a>
+        </div>
+      </div>
+      <!-- Mobile-friendly static image (shows small on phones, widescreen on desktop) -->
+      <img src="/assets/hero.jpg" alt="People collaborating on technology in Africa" />
+    </section>
+
+    <section class="container section kilima" id="flagship">
+      <img src="/assets/hero.jpg" alt="KilimaHUB preview" style="border-radius:16px;border:1px solid #1c2540;box-shadow:0 10px 30px rgba(0,0,0,.35);height:220px;object-fit:cover;">
+      <div class="card">
+        <h2 style="margin:0 0 8px;">KilimaHUB — Our Flagship</h2>
+        <p style="margin:0 0 10px; color:#9fb0c6">
+          A foundation for entrepreneurs, creators, and communities. Hiring, marketplaces, and
+          services—built for real needs and real growth.
+        </p>
+        <div class="badges">
+          <span class="badge">Jobs & Talent</span>
+          <span class="badge">Market Access</span>
+          <span class="badge">Creator Tools</span>
+          <span class="badge">Community</span>
+        </div>
+        <div class="cta" style="margin-top:14px">
+          <a class="btn acc" href="/services.html#kilimahub">See details</a>
+          <a class="btn" href="/careers.html">Join the team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 style="margin:0 0 12px;">Future Focus Areas</h2>
+      <div class="badges">
+        <span class="badge">AI for Agriculture</span>
+        <span class="badge">Inclusive Fintech</span>
+        <span class="badge">Digital Education</span>
+        <span class="badge">Climate & Resilience</span>
+        <span class="badge">Health Tech</span>
+        <span class="badge">Civic Tools</span>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 style="margin:0 0 12px;">Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Product Strategy & Design</h3>
+          <p>Fast discovery, prototyping, and polished UX for web and mobile.</p>
+        </div>
+        <div class="card">
+          <h3>Full-Stack Development</h3>
+          <p>From static sites to scalable platforms with APIs and data.</p>
+        </div>
+        <div class="card" id="kilimahub">
+          <h3>KilimaHUB Platform</h3>
+          <p>Flagship product to launch communities, talent, and marketplaces.</p>
+        </div>
+        <div class="card">
+          <h3>Data & AI Enablement</h3>
+          <p>Practical ML/AI to make operations smarter, not heavier.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <p>Simple, resilient infra on a shoestring budget.</p>
+        </div>
+        <div class="card">
+          <h3>Advisory & Training</h3>
+          <p>Workshops and hands-on support for teams and founders.</p>
+        </div>
+      </div>
+      <div class="cta-bar">
+        <div>
+          <strong>Hiring across Klap Ideas & KilimaHUB.</strong>
+          <div style="color:#9fb0c6">Engineers, Designers, Community, Ops.</div>
+        </div>
+        <a class="btn acc" href="/careers.html">See open roles</a>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 style="margin:0 0 12px;">Get in touch</h2>
+      <p style="color:#9fb0c6; margin:0 0 10px">We love practical problems and ambitious ideas.</p>
+      <div class="badges">
+        <a class="badge" href="mailto:hello@klapideas.com">hello@klapideas.com</a>
+        <a class="badge" href="mailto:careers@klapideas.com">careers@klapideas.com</a>
+        <a class="badge" href="mailto:press@klapideas.com">press@klapideas.com</a>
+      </div>
     </section>
   </main>
 
-  <footer class="container">
-    <small>© <span id="y"></span> Klap Ideas Nigeria Ltd. All rights reserved.</small>
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Klap Ideas — Registered in Nigeria • Building from Africa for the world</div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
