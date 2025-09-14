@@ -1,0 +1,15 @@
+{
+  // Turn off all inline “ghost text” suggestions (Amazon Q, Copilot, etc.)
+  "editor.inlineSuggest.enabled": false,
+
+  // Reduce popup suggestions while you type (keeps Ctrl+Space manual completions)
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+
+  // Optional: silence parameter hints
+  "editor.parameterHints.enabled": false
+}

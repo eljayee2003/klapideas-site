@@ -1,28 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Careers — Klap Ideas</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+  <meta name="description" content="Join Klap Ideas & KilimaHUB. We hire for craft, momentum, and empathy."/>
+  <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-  <nav class="container">
-    <ul><li><strong>Klap Ideas</strong></li></ul>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main class="container">
-    <h1>Join Klap Ideas</h1>
-    <p>We’re hiring across Klap Ideas and KilimaHUB.</p>
-    <div id="jobs"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
+      <nav>
+        <a class="link" href="/index.html">Home</a>
+        <a class="link" href="/about.html">About</a>
+        <a class="link" href="/services.html">Services</a>
+        <a class="link" href="/careers.html">Careers</a>
+        <a class="link" href="/contact.html">Contact</a>
+        <a class="btn acc" href="/careers.html">We’re hiring</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1 style="margin:6px 0 14px;">Careers</h1>
+    <p style="color:#9fb0c6;max-width:70ch">
+      We’re building a small, excellent team across engineering, design, community, and operations.
+      If you ship with care and curiosity, we want to hear from you.
+    </p>
+
+    <div class="cta-bar">
+      <div><strong>Open roles update regularly.</strong><div style="color:#9fb0c6">Send a short note + links to your work.</div></div>
+      <a class="btn acc" href="mailto:careers@klapideas.com">careers@klapideas.com</a>
+    </div>
+
+    <!-- Jobs list populated by /js/jobs.js (already in your repo). -->
+    <section class="section">
+      <h2 style="margin:0 0 10px;">Open Roles</h2>
+      <div id="jobs-list" class="grid"></div>
+      <p id="jobs-empty" style="display:none;color:#9fb0c6">No open roles right now—send your portfolio anyway!</p>
+    </section>
   </main>
-  <footer class="container"><small>© <span id="y"></span> Klap Ideas Nigeria Ltd.</small></footer>
-  <script src="/js/jobs.js"></script>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Klap Ideas — Registered in Nigeria</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <!-- Use your existing jobs.js; it should target #jobs-list. If it uses a different ID, change either the script or the div ID above. -->
+  <script src="/js/jobs.js" defer></script>
+
+  <!-- OPTIONAL fallback if /js/jobs.js is empty; uncomment to use
+  <script>
+  fetch('/jobs.json').then(r=>r.json()).then(items=>{
+    const grid=document.getElementById('jobs-list'); if(!grid) return;
+    if(!items.length){ document.getElementById('jobs-empty').style.display='block'; return; }
+    for(const j of items){
+      const card=document.createElement('div'); card.className='card';
+      card.innerHTML=`<h3>${j.title}</h3><p style="color:#9fb0c6;margin:0 0 8px">${j.team||'—'} • ${j.location||'Remote'}</p>
+                      <p>${j.summary||''}</p>
+                      <div class="cta" style="margin-top:10px"><a class="btn acc" href="mailto:careers@klapideas.com?subject=${encodeURIComponent(j.title)}">Apply</a></div>`;
+      grid.appendChild(card);
+    }
+  }).catch(()=>document.getElementById('jobs-empty').style.display='block');
+  </script>
+  -->
 </body>
 </html>

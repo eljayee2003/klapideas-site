@@ -1,27 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>About — Klap Ideas</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+  <meta name="description" content="Klap Ideas is a Nigerian-born, globally-minded tech company building practical products that uplift Africa and scale with the world."/>
+  <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-  <nav class="container">
-    <ul><li><strong>Klap Ideas</strong></li></ul>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main class="container">
-    <h1>About Klap Ideas</h1>
-    <p>Klap Ideas is a Nigerian tech company with global ambition. We ship clean, maintainable software and pragmatic design.</p>
-    <p>Flagship: <strong>KilimaHUB</strong> — a multi-vertical social + marketplace platform.</p>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
+      <nav>
+        <a class="link" href="/index.html">Home</a>
+        <a class="link" href="/about.html">About</a>
+        <a class="link" href="/services.html">Services</a>
+        <a class="link" href="/careers.html">Careers</a>
+        <a class="link" href="/contact.html">Contact</a>
+        <a class="btn acc" href="/careers.html">We’re hiring</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1 style="margin:6px 0 12px;">About Klap Ideas</h1>
+    <p style="color:#9fb0c6;max-width:70ch">
+      Born in Nigeria, building for the continent—and the world. We ship practical, elegant technology that unlocks opportunity:
+      jobs, markets, education, health, and climate resilience. <strong>KilimaHUB</strong> is our flagship, but our roadmap spans
+      AI, fintech access, and digital public goods.
+    </p>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card"><h3>Mission</h3><p>Build tech that uplifts Africa and scales globally, with measurable real-world impact.</p></div>
+      <div class="card"><h3>Approach</h3><p>Small teams, fast cycles, strong UX, and data-driven iteration. Beauty + simplicity.</p></div>
+      <div class="card"><h3>Values</h3><p>Truth, craft, momentum, empathy. We ship; we learn; we improve.</p></div>
+    </div>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px;">Our Story</h2>
+      <div class="card">
+        <p style="color:#9fb0c6;margin:0">
+          We started Klap Ideas to focus on durable fundamentals: product sense, engineering clarity, and community.
+          We’re proudly Nigerian, remote-friendly, and partner with teams across Africa and beyond.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px;">Focus Areas</h2>
+      <div class="badges">
+        <span class="badge">AI for Agriculture</span>
+        <span class="badge">Inclusive Fintech</span>
+        <span class="badge">Digital Education</span>
+        <span class="badge">Climate & Resilience</span>
+        <span class="badge">Health Tech</span>
+        <span class="badge">Civic Tools</span>
+      </div>
+    </section>
   </main>
-  <footer class="container"><small>© <span id="y"></span> Klap Ideas Nigeria Ltd.</small></footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Klap Ideas — Registered in Nigeria</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
