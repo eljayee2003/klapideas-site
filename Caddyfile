@@ -1,0 +1,8 @@
+{
+  email hello@klapideas.com
+}
+
+klapideas.com, www.klapideas.com {
+  reverse_proxy /* klap_site:80
+  encode zstd gzip
+}
