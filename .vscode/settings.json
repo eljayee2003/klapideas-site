@@ -1,10 +1,17 @@
 {
+  "//": "Hard stop for ghost text, AI suggestions, popups, hints.",
   "editor.inlineSuggest.enabled": false,
   "editor.suggestOnTriggerCharacters": false,
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  },
-  "editor.parameterHints.enabled": false
+  "editor.quickSuggestions": { "other": false, "comments": false, "strings": false },
+  "editor.parameterHints.enabled": false,
+  "editor.hover.enabled": false,
+  "editor.wordBasedSuggestions": "off",
+
+  "//": "Turn off JS/TS IntelliSense while editing HTML/CSS (optional, re-enable later).",
+  "javascript.suggest.enabled": false,
+  "typescript.suggest.enabled": false,
+
+  "//": "If you have GitHub Copilot:",
+  "github.copilot.enable": { "*": false, "plaintext": false, "markdown": false, "scminput": false },
+  "github.copilot.inlineSuggest.enable": false
 }
