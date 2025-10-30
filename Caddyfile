@@ -3,10 +3,14 @@
 }
 
 klapideas.com, www.klapideas.com {
-  # Redirect any /kilimahub* path to the external site, preserving the full path
-  @kilima path /kilimahub*
-  redir @kilima https://www.kilimahub.com{uri} 308
+  # Any /kilimahub* -> https://www.kilimahub.com (drop the prefix entirely)
+  handle_path /kilimahub* {
+    redir https://www.kilimahub.com 308
+  }
 
-  encode zstd gzip
-  reverse_proxy klap_site:80
+  # Everything else goes to the app
+  handle {
+    encode zstd gzip
+    reverse_proxy klap_site:80
+  }
 }
