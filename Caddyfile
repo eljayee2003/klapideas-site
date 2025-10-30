@@ -3,6 +3,10 @@
 }
 
 klapideas.com, www.klapideas.com {
-  reverse_proxy /* klap_site:80
+  # Redirect any /kilimahub* path to the external site, preserving the full path
+  @kilima path /kilimahub*
+  redir @kilima https://www.kilimahub.com{uri} 308
+
   encode zstd gzip
+  reverse_proxy klap_site:80
 }
