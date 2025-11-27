@@ -26,23 +26,61 @@
     </div>
   </header>
 
+  <script>
+  (function () {
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    ['btn-apk','apk-note','apk-help'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (isAndroid) { el.classList.add('show'); } else { el.classList.remove('show'); }
+    });
+  })();
+</script>
+
   <main>
     <section class="container hero">
-      <div>
-        <h1>Technology for Africa—built to scale with the world</h1>
-        <p>
-          We design and launch practical, elegant products that unlock opportunity.
-          <strong>KilimaHUB</strong> is our flagship platform—just the start of a broader roadmap in
-          AI, fintech access, climate resilience, health, and digital education.
-        </p>
-        <div class="cta">
-          <a class="btn acc" href="https://www.kilimahub.com" target="_blank" rel="noopener">Explore KilimaHUB</a>
-          <a class="btn" href="/about.html">Learn about Klap Ideas</a>
-        </div>
-      </div>
-      <!-- Mobile-friendly static image (shows small on phones, widescreen on desktop) -->
-      <img src="/assets/hero.jpg" alt="People collaborating on technology in Africa" />
-    </section>
+  <div>
+    <h1>Technology for Africa—built to scale with the world</h1>
+    <p>
+      We design and launch practical, elegant products that unlock opportunity.
+      <strong>KilimaHUB</strong> is our flagship platform—just the start of a broader roadmap in
+      AI, fintech access, climate resilience, health, and digital education.
+    </p>
+
+    <div class="cta">
+      <a class="btn acc" href="https://www.kilimahub.com" target="_blank" rel="noopener">Explore KilimaHUB</a>
+      <a class="btn" href="/about.html">Learn about Klap Ideas</a>
+
+      <!-- Android-only CTA (revealed by JS for Android user agents) -->
+      <a
+        id="btn-apk"
+        class="btn android"
+        href="https://github.com/eljayee2003/kilimahub-android/releases/latest/download/KilimaHUB.apk"
+        rel="noopener"
+      >
+        Download KilimaHUB for Android (APK)
+      </a>
+    </div>
+
+    <!-- Android-only helper text -->
+    <p id="apk-note" class="note-sm android">Early Access. If prompted, allow <em>Install unknown apps</em>, then open file → Install.
+      <a href="https://github.com/eljayee2003/kilimahub-android/releases/latest" target="_blank" rel="noopener">Verify SHA-256 in release notes</a>.
+    </p>
+
+    <details id="apk-help" class="apk-help android">
+      <summary>Install steps (Android)</summary>
+      <ol>
+        <li>Tap the button above to download <code>KilimaHUB.apk</code>.</li>
+        <li>If asked, allow <strong>Install unknown apps</strong> for your browser/Files app.</li>
+        <li>Open the downloaded file → <strong>Install</strong>.</li>
+        <li>(Optional) Compare the APK’s <strong>SHA-256</strong> with the value printed in the release notes.</li>
+      </ol>
+    </details>
+  </div>
+
+  <!-- Mobile-friendly static image (shows small on phones, widescreen on desktop) -->
+  <img src="/assets/hero.jpg" alt="People collaborating on technology in Africa" />
+</section>
 
     <section class="container section">
       <div class="grid">
@@ -152,8 +190,6 @@
       <p style="color:#9fb0c6; margin:0 0 10px">We love practical problems and ambitious ideas.</p>
       <div class="badges">
         <a class="badge" href="mailto:hello@klapideas.com">hello@klapideas.com</a>
-        <a class="badge" href="mailto:careers@klapideas.com">careers@klapideas.com</a>
-        <a class="badge" href="mailto:press@klapideas.com">press@klapideas.com</a>
       </div>
     </section>
   </main>
