@@ -5,23 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Services — Klap Ideas</title>
   <meta name="description" content="Entrepreneurship, strategy, design, engineering, data/AI, and platform operations. KilimaHUB is our flagship platform service. Media programs and e-commerce linkages help partners launch and grow."/>
-  <link rel="stylesheet" href="/styles.css?v=2025-10-01-2">
+  <link rel="stylesheet" href="/styles.css?v=2025-10-01-3">
 </head>
 <body>
   <header class="nav">
-    <div class="container nav-inner">
-      <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
-      <nav>
-        <a class="link" href="/index.html">Home</a>
-        <a class="link" href="/about.html">About</a>
-        <a class="link" href="/services.html" aria-current="page">Services</a>
-        <a class="link" href="/media.html">Media</a>
-        <a class="link" href="/careers.html">Careers</a>
-        <a class="link" href="/contact.html">Contact</a>
-        <a class="btn acc" href="/careers.html">We’re hiring</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav-inner">
+    <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
+    <nav>
+      <a class="link" href="/index.html">Home</a>
+      <a class="link" href="/about.html">About</a>
+      <a class="link" href="/services.html">Services</a>
+
+      <!-- Media dropdown -->
+      <div class="menu">
+        <button class="link has-caret" id="mediaMenuBtn"
+                aria-haspopup="true" aria-expanded="false" aria-controls="mediaMenu">
+          Media
+        </button>
+        <div class="dropdown" id="mediaMenu" role="menu">
+          <a class="dropdown-item" role="menuitem"
+             href="https://a.co/d/cM0hOt4" target="_blank" rel="noopener">
+            Africa on Sale: The Diaspora’s Ownership Playbook — Kindle / Amazon
+          </a>
+          <a class="dropdown-item" role="menuitem"
+             href="https://www.youtube.com/@buyandthinkafrica" target="_blank" rel="noopener">
+            Buy & Think Africa — YouTube
+          </a>
+        </div>
+      </div>
+      <!-- /Media dropdown -->
+
+      <a class="link" href="/careers.html">Careers</a>
+      <a class="link" href="/contact.html" aria-current="page">Contact</a>
+      <a class="btn acc" href="/careers.html">We’re hiring</a>
+    </nav>
+  </div>
+</header>
 
   <main class="container section">
     <h1 style="margin:6px 0 14px;">Services</h1>

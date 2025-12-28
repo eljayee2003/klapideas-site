@@ -5,24 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>About — Klap Ideas</title>
   <meta name="description" content="Klap Ideas is a Nigerian-born, globally-minded tech company building practical products that uplift Africa and scale with the world."/>
-  <link rel="stylesheet" href="/styles.css?v=2025-10-01-2">
+  <link rel="stylesheet" href="/styles.css?v=2025-10-01-3">
 </head>
 <body>
   <header class="nav">
-    <div class="container nav-inner">
-      <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
-      <nav>
-        <a class="link" href="/index.html">Home</a>
-        <a class="link" href="/about.html" aria-current="page">About</a>
-        <a class="link" href="/services.html">Services</a>
-        <a class="link" href="/media.html">Media</a>
-        <a class="link" href="/careers.html">Careers</a>
-        <a class="link" href="/contact.html">Contact</a>
-        <a class="btn acc" href="/careers.html">We’re hiring</a>
-      </nav>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav-inner">
+    <div class="logo"><span class="logo-badge"></span><span>Klap Ideas</span></div>
+    <nav>
+      <a class="link" href="/index.html">Home</a>
+      <a class="link" href="/about.html">About</a>
+      <a class="link" href="/services.html">Services</a>
+
+      <!-- Media dropdown -->
+      <div class="menu">
+        <button class="link has-caret" id="mediaMenuBtn"
+                aria-haspopup="true" aria-expanded="false" aria-controls="mediaMenu">
+          Media
+        </button>
+        <div class="dropdown" id="mediaMenu" role="menu">
+          <a class="dropdown-item" role="menuitem"
+             href="https://a.co/d/cM0hOt4" target="_blank" rel="noopener">
+            Africa on Sale: The Diaspora’s Ownership Playbook — Kindle / Amazon
+          </a>
+          <a class="dropdown-item" role="menuitem"
+             href="https://www.youtube.com/@buyandthinkafrica" target="_blank" rel="noopener">
+            Buy & Think Africa — YouTube
+          </a>
+        </div>
+      </div>
+      <!-- /Media dropdown -->
+
+      <a class="link" href="/careers.html">Careers</a>
+      <a class="link" href="/contact.html" aria-current="page">Contact</a>
+      <a class="btn acc" href="/careers.html">We’re hiring</a>
+    </nav>
+  </div>
+</header>
+<script>
+  (function () {
+    const btn  = document.getElementById('mediaMenuBtn');
+    const menu = document.getElementById('mediaMenu');
+    const wrap = btn?.parentElement;
+
+    if (!btn || !menu || !wrap) return;
+
+    function closeMenu() {
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function toggleMenu() {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      wrap.classList.toggle('open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleMenu();
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) closeMenu();
+    });
+
+    // Keyboard: Escape to close, Down/Up to move focus
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+      if ((e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') && !wrap.classList.contains('open')) {
+        e.preventDefault();
+        toggleMenu();
+        const first = menu.querySelector('.dropdown-item');
+        first && first.focus();
+      }
+    });
+    menu.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeMenu(); btn.focus(); }
+    });
+  })();
+</script>
 
   <main class="container section">
     <h1 style="margin:6px 0 12px;">About Klap Ideas</h1>

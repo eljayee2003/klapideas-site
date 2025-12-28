@@ -77,3 +77,79 @@ a{color:inherit;text-decoration:none}
   .hero img{height:220px}
 }
 
+/* Dropdown container */
+.nav .menu { position: relative; display: inline-block; }
+
+/* Caret indicator on the Media button */
+.link.has-caret { display: inline-flex; align-items: center; gap: .35rem; }
+.link.has-caret::after {
+  content: "";
+  border: 5px solid transparent;
+  border-top-color: currentColor;
+  transform: translateY(2px);
+}
+
+/* Panel */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: .5rem;
+  display: none;
+  z-index: 1000;
+}
+
+/* Show when open */
+.menu.open .dropdown { display: block; }
+
+/* Items */
+.dropdown-item {
+  display: block;
+  padding: .6rem .8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111;
+  line-height: 1.25;
+  font-weight: 500;
+  white-space: normal;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+  background: #f5f7fb;
+  outline: none;
+}
+
+/* Optional: keep dropdown visible on hover as well */
+.menu:hover .dropdown { display: block; }
+
+/* ----- Media dropdown (split label + caret) ----- */
+.nav .menu { position: relative; display: inline-flex; gap: .25rem; align-items: center; }
+.link.has-caret-label { display: inline-flex; align-items: center; }
+.link.caret-btn { display: inline-flex; align-items: center; padding-inline: .4rem; }
+.link.caret-btn .caret {
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid currentColor; transform: translateY(2px);
+}
+.dropdown {
+  position: absolute; top: 100%; left: 0;
+  min-width: 260px; background: #fff; border: 1px solid #e6e6e6;
+  border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: .5rem; display: none; z-index: 1000;
+}
+.menu.open .dropdown { display: block; }
+.dropdown-item {
+  display: block; padding: .6rem .8rem; border-radius: 8px;
+  text-decoration: none; color: #111; line-height: 1.25; font-weight: 500;
+}
+.dropdown-item:hover, .dropdown-item:focus { background: #f5f7fb; outline: none; }
+
+/* utilities */
+.h2 { margin: 0 0 12px; }
+.muted { color: #9fb0c6; margin: 0 0 12px; }
+.mt-12 { margin-top: 12px; } .mt-14 { margin-top: 14px; }
+.tiny { font-size: .875rem; color: #6c7a8b; }
