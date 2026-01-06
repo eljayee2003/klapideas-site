@@ -13,6 +13,9 @@ services:
   klap_site:
     build: .
     restart: unless-stopped
+    # Mount the live web root so rsync updates show up instantly
+    volumes:
+      - /var/www/klapideas.com:/usr/share/nginx/html:ro
 
 volumes:
   caddy_data:
